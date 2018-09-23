@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Menu View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gory_kamni_nebo_svet_vecher_87675_800x1420" translatesAutoresizingMaskIntoConstraints="NO" id="rmD-wr-Obq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLb-4G-GNi">
+                                <rect key="frame" x="15" y="182" width="345" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                <state key="normal" title="Choose city">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="87O-ww-hjb" kind="show" id="NMU-DV-1Hm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eQ-po-bHk">
+                                <rect key="frame" x="15" y="94" width="345" height="60"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GLb-4G-GNi" firstAttribute="top" secondItem="5eQ-po-bHk" secondAttribute="bottom" constant="28" id="CpA-NG-zfx"/>
+                            <constraint firstItem="GLb-4G-GNi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="HHh-qI-RVF"/>
+                            <constraint firstItem="rmD-wr-Obq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VD0-e4-ew2"/>
+                            <constraint firstItem="5eQ-po-bHk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WBM-nJ-kgl"/>
+                            <constraint firstItem="rmD-wr-Obq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fA5-ee-GQi"/>
+                            <constraint firstItem="5eQ-po-bHk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="gHi-rY-ACL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GLb-4G-GNi" secondAttribute="trailing" constant="15" id="jZb-wM-DUb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5eQ-po-bHk" secondAttribute="trailing" constant="15" id="pmD-9c-rk7"/>
+                            <constraint firstItem="5eQ-po-bHk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="udm-9G-302"/>
+                            <constraint firstItem="rmD-wr-Obq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wFd-yu-4QM"/>
+                            <constraint firstItem="rmD-wr-Obq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zfA-yI-Eik"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="chhoseCityBT" destination="GLb-4G-GNi" id="QQf-r8-VGx"/>
+                        <outlet property="welcomeLabel" destination="5eQ-po-bHk" id="Iqe-O5-95O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Get Weather View Controller-->
+        <scene sceneID="BDe-8b-1Ii">
+            <objects>
+                <viewController id="87O-ww-hjb" customClass="GetWeatherViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F3q-nk-Tsk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gory_kamni_nebo_svet_vecher_87675_800x1420" translatesAutoresizingMaskIntoConstraints="NO" id="6O4-ub-HgO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                            </imageView>
+                            <searchBar contentMode="redraw" verticalCompressionResistancePriority="752" placeholder="City" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-Dd-u2B">
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits" textContentType="address-level2"/>
+                                <connections>
+                                    <outlet property="delegate" destination="87O-ww-hjb" id="rQW-hA-ZGk"/>
+                                </connections>
+                            </searchBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EhR-AN-eyz">
+                                <rect key="frame" x="75" y="116.99999999999999" width="225" height="224.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EhR-AN-eyz" secondAttribute="height" multiplier="1:1" id="hFx-j0-lyL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwO-jM-Bh1" userLabel="City">
+                                <rect key="frame" x="0.0" y="351.66666666666669" width="375" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="55"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="28" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f8h-6l-71Z" userLabel="Temperature">
+                                <rect key="frame" x="0.0" y="376.66666666666669" width="375" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="55"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="28" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IoX-Vt-yiF" userLabel="Describtion">
+                                <rect key="frame" x="0.0" y="401.66666666666669" width="375" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="55"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6O4-ub-HgO" firstAttribute="top" secondItem="F3q-nk-Tsk" secondAttribute="top" id="3yE-19-7HS"/>
+                            <constraint firstItem="EhR-AN-eyz" firstAttribute="centerX" secondItem="F3q-nk-Tsk" secondAttribute="centerX" id="5OZ-yE-nKW"/>
+                            <constraint firstItem="6O4-ub-HgO" firstAttribute="leading" secondItem="2co-mt-Sz2" secondAttribute="leading" id="64Z-iH-xe3"/>
+                            <constraint firstItem="6Hb-Dd-u2B" firstAttribute="leading" secondItem="2co-mt-Sz2" secondAttribute="leading" id="6wL-g5-zZe"/>
+                            <constraint firstItem="6O4-ub-HgO" firstAttribute="trailing" secondItem="2co-mt-Sz2" secondAttribute="trailing" id="90J-ye-lQt"/>
+                            <constraint firstItem="iwO-jM-Bh1" firstAttribute="leading" secondItem="2co-mt-Sz2" secondAttribute="leading" id="9xb-1l-gTP"/>
+                            <constraint firstItem="2co-mt-Sz2" firstAttribute="trailing" secondItem="f8h-6l-71Z" secondAttribute="trailing" id="Bmz-vl-Rnc"/>
+                            <constraint firstItem="6O4-ub-HgO" firstAttribute="bottom" secondItem="2co-mt-Sz2" secondAttribute="bottom" id="Hcr-W3-S9R"/>
+                            <constraint firstItem="EhR-AN-eyz" firstAttribute="width" secondItem="F3q-nk-Tsk" secondAttribute="width" multiplier="0.6" id="IHA-YE-Tav"/>
+                            <constraint firstItem="6Hb-Dd-u2B" firstAttribute="top" secondItem="2co-mt-Sz2" secondAttribute="top" id="LzC-ui-b0K"/>
+                            <constraint firstItem="f8h-6l-71Z" firstAttribute="top" secondItem="iwO-jM-Bh1" secondAttribute="bottom" constant="25" id="M35-Y9-feC"/>
+                            <constraint firstItem="2co-mt-Sz2" firstAttribute="trailing" secondItem="IoX-Vt-yiF" secondAttribute="trailing" id="OmJ-NG-Wjg"/>
+                            <constraint firstItem="iwO-jM-Bh1" firstAttribute="top" secondItem="EhR-AN-eyz" secondAttribute="bottom" constant="10" id="TCy-s4-ZSB"/>
+                            <constraint firstItem="6Hb-Dd-u2B" firstAttribute="trailing" secondItem="2co-mt-Sz2" secondAttribute="trailing" id="VHc-F5-jrB"/>
+                            <constraint firstItem="iwO-jM-Bh1" firstAttribute="leading" secondItem="f8h-6l-71Z" secondAttribute="leading" id="Y6I-BQ-tR1"/>
+                            <constraint firstItem="iwO-jM-Bh1" firstAttribute="trailing" secondItem="2co-mt-Sz2" secondAttribute="trailing" id="mgf-Cc-yuN"/>
+                            <constraint firstItem="IoX-Vt-yiF" firstAttribute="leading" secondItem="2co-mt-Sz2" secondAttribute="leading" id="oN5-ph-RnS"/>
+                            <constraint firstItem="IoX-Vt-yiF" firstAttribute="top" secondItem="f8h-6l-71Z" secondAttribute="bottom" constant="25" id="rlg-Dv-XCq"/>
+                            <constraint firstItem="EhR-AN-eyz" firstAttribute="top" secondItem="6Hb-Dd-u2B" secondAttribute="bottom" constant="17" id="vs4-Xo-Quy"/>
+                            <constraint firstItem="f8h-6l-71Z" firstAttribute="leading" secondItem="2co-mt-Sz2" secondAttribute="leading" id="xxa-L8-ayx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2co-mt-Sz2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gBc-vw-TTA"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="iwO-jM-Bh1" id="2qG-GA-MXU"/>
+                        <outlet property="describtionLabel" destination="IoX-Vt-yiF" id="b9P-cF-lEu"/>
+                        <outlet property="imageView" destination="EhR-AN-eyz" id="GAT-xy-OmT"/>
+                        <outlet property="searchBar" destination="6Hb-Dd-u2B" id="YvI-c5-wcg"/>
+                        <outlet property="searchDisplayController" destination="lMe-o0-cAn" id="uOr-1g-Tie"/>
+                        <outlet property="temperatureLabel" destination="f8h-6l-71Z" id="ZVP-GK-6SG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="513-db-qK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="lMe-o0-cAn">
+                    <connections>
+                        <outlet property="delegate" destination="87O-ww-hjb" id="pnj-DT-PwL"/>
+                        <outlet property="searchContentsController" destination="87O-ww-hjb" id="nGi-2R-xsm"/>
+                        <outlet property="searchResultsDataSource" destination="87O-ww-hjb" id="Rnp-t9-EQT"/>
+                        <outlet property="searchResultsDelegate" destination="87O-ww-hjb" id="0xC-wa-Van"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1004" y="132.26600985221674"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gory_kamni_nebo_svet_vecher_87675_800x1420" width="400" height="710"/>
+    </resources>
+</document>
