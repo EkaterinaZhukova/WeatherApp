@@ -71,7 +71,6 @@
 		C4195E9B21514DEE00653921 /* SupprotingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				C475BBA320E91D94007BB494 /* Info.plist */,
 			);
 			path = SupprotingFiles;
 			sourceTree = "<group>";
@@ -101,6 +100,7 @@
 				C4195E9821514D8F00653921 /* Model */,
 				C475BB9E20E91D94007BB494 /* Assets.xcassets */,
 				C475BBA020E91D94007BB494 /* LaunchScreen.storyboard */,
+				C475BBA320E91D94007BB494 /* Info.plist */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
