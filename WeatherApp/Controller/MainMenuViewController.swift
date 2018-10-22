@@ -22,11 +22,11 @@ class MainMenuViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         welcomeLabel.alpha = 0
         chhoseCityBT.alpha = 0
-        UILabel.animate(withDuration: 1, delay: 0.3, options: [], animations: {
-           self.welcomeLabel.alpha = 1
+        UILabel.animate(withDuration: 1, delay: 0.3, options: [], animations: {[weak self] in
+           self?.welcomeLabel.alpha = 1
         }, completion:nil)
-        UIButton.animate(withDuration: 0.55, delay: 0.8, options: [], animations: {
-            self.chhoseCityBT.alpha = 1
+        UIButton.animate(withDuration: 0.55, delay: 0.8, options: [], animations: {[weak self] in
+            self?.chhoseCityBT.alpha = 1
         }, completion:nil)
     }
     

@@ -32,7 +32,8 @@ class GetWeatherViewController: UIViewController, UISearchBarDelegate{
         let url = URL(string: urlString)
         let request = URLRequest(url: url!)
         var weather:WeatherObject?
-        let task = URLSession.shared.dataTask(with: request, completionHandler: {(data, response, error) -> Void in
+        
+        let task = URLSession.shared.dataTask(with: request, completionHandler: {[weak self] (data, response, error) -> Void in
             if let error = error{
                 print(error)
                 return
@@ -42,16 +43,17 @@ class GetWeatherViewController: UIViewController, UISearchBarDelegate{
             }
             DispatchQueue.main.async{
                 if(weather == nil){
-                    self.cityLabel.text = "Oops...Try later :("
-                    self.temperatureLabel.text = "Something went wrong :("
-                    self.describtionLabel.text = ""
+                    
+                    self?.cityLabel.text = "Oops...Try later :("
+                    self?.temperatureLabel.text = "Something went wrong :("
+                    self?.describtionLabel.text = ""
                     
                     return
                 }
-                self.cityLabel.text = weather!.nameCity
-                self.temperatureLabel.text = String(weather!.degree!)+"ºC"
-                self.imageView.image = UIImage(named: weather!.iconString!)
-                self.describtionLabel.text = weather!.main! + "\n" + weather!.describtion!
+                self?.cityLabel.text = weather!.nameCity
+                self?.temperatureLabel.text = String(weather!.degree!)+"ºC"
+                self?.imageView.image = UIImage(named: weather!.iconString!)
+                self?.describtionLabel.text = weather!.main! + "\n" + weather!.describtion!
             }
         })
         task.resume()
